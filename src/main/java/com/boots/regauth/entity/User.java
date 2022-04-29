@@ -20,6 +20,8 @@ public class User implements UserDetails {
     private String password;
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String token;
+
+    private String email;
     @Transient
     private String passwordConfirm;
     @ManyToMany(fetch = FetchType.EAGER)
@@ -101,5 +103,13 @@ public class User implements UserDetails {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
